@@ -53,7 +53,7 @@ let personalMovieDB = {
 
 function rememberMyFilms(){
     for(let i = 0; i < 2; i++){ // автоматизируем цикл чтобы не писать 4 строки как выше
-        const lastMovie = prompt("Один из последних просмотренных фильмов?", "");
+        const lastMovie = prompt("Один из последних просмотренных фильмов?", "").trim(); // trim не дает вводить пробел вначале и конце строки
         const rate = prompt("На сколько оцените его?", "");
         // переменная не должна ровняться null и тд
         if(lastMovie != null && rate != null && lastMovie != "" && rate != "" && lastMovie.length <= 50 && rate.length <= 50){ // проверяем на то, чтобы пользователь не нажал Отмена, не оставил поле пустым, и чтобы длина была нге больше 50 символов
