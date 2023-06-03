@@ -102,18 +102,27 @@ let personalMovieDB = {
 
 
     writeYourGenres: function(){ // функция задает три вопроса и записывает в масив ответы
-        for(let i = 1; i <= 3; i++){
-            let genre = prompt(`Ваш любимый жанр под номером ${i}`); // пример азписи ответов на вопрос сразу в маасив
+        for(let i = 1; i < 2; i++){
+            let genre = prompt(`Введите ваши любимые жанры через запятую`); // пример азписи ответов на вопрос сразу в маасив
 
 
-            if(genre === "" || genre == null){
-                console.log("Вы вввели не корректные данные");
-                i--;
-            } else {
-                personalMovieDB.genres[i - 1] = genre;
+        //     if(genre === "" || genre == null){
+        //         console.log("Вы вввели не корректные данные");
+        //         i--;
+        //     } else {
+        //         personalMovieDB.genres[i - 1] = genre;
 
-            }
+        //     }
+        // }
+        if(genre === "" || genre == null){
+            console.log("Вы вввели не корректные данные");
+            i--;
+        } else {
+            personalMovieDB.genres = genre.split(", "); // разделяем запятой
+            personalMovieDB.genres.sort();
+
         }
+    }
 
         personalMovieDB.genres.forEach((item, i) => {
             console.log(`Любимый жанр ${i + 1} - это ${item}`);
